@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>camel</title>{% endblock %}
+{% block description %}<meta name="description" content="python coding">{% endblock %}
+{% block keywords %}<meta name="keywords" content="Python, Django, Web Development">{% endblock %}
+{% block author %}<meta name="author" content="Alisher Khalikulov">{% endblock %}
+
+
+{% block content %}
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col mb-3">
+        <form action="." method="POST">
+          <label for="tok">tok</label>
+          <input type="radio" name="tok" id="tok" value="{{tok}}">
+          <label for="sa">sa</label>
+          <input type="radio" name="sa" id="sa" value="{{sa}}">
+          <label for="ner">ner</label>
+          <input type="radio" name="ner" id="ner" value="{{ner}}">
+          <label for="did">did</label>
+          <input type="radio" name="did" id="did" value="{{did}}">
+          <label for="tagging">tagging</label>
+          <input type="radio" name="tagging" id="tagging" value="{{tagging}}">
+          <label for="morphological">morphological</label>
+          <input type="radio" name="morphological" id="morphological" value="{{morphological}}">
+          <br>
+          <textarea name="main" id="main" cols="30" rows="5"></textarea>
+          <br>
+          {% if result %}
+            <textarea name="result" id="result" cols="30" rows="5">{{result}}</textarea>
+          {% else %}
+            <textarea name="result" id="result" cols="30" rows="5"></textarea>
+          {% endif %}
+          <br>
+          <button type="submit" class="btn btn-success btn-sm">submit</button>
+        </form>
+      </div>
+    </div>
+      
+  </div> <!-- container main -->
+
+
+</div>
+{% endblock %}
